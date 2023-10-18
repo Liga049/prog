@@ -44,7 +44,8 @@ while repeat:
     else:
         repeat = False
         print("Paldies par spēli! bye bye")
-
+```
+#### 3. un t.t
 
 
 
