@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+        crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <title>Rezultāti 1</title>
+</head>
+
+<body>
+
+  <div class="text-center">
+    <img src="{{ url_for('static', filename='cinema.jpg') }}" 
+         style="width:30%; height: 170px;" alt="Cinema Image">
+  </div>
+
+  <nav class="navbar bg-danger navbar-light"> 
+    <ul class="navbar-nav d-flex flex-row">
+      {% for link in nav_links %}
+        <li class="nav-item px-3">
+          <a href="{{ url_for(link.id) }}" style="color: white;">{{ link.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="text-center">
+    <h2>Populārākais žanrs</h2>
+    <div class="text-center">
+  <div class="text-center">
+    <img src="{{ url_for('static', filename='stab.png') }}" alt="Bar Chart" class="img-fluid">
+  </div>
+
+
+  <div class="text-center">
+    <h2>Visas atbildes</h2>
+    <div class="text-center">
+
+  <div>
+    {{ table_html | safe }}
+  </div>
+
+</body>
+</html>
